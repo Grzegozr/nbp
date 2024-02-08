@@ -12,7 +12,4 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-session()->flash('success', 'Pomyślnie zapisano');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\NbpController::class, 'index'])->name('home');

@@ -14,6 +14,7 @@
 </head>
 <body >
 @include('alerts.success')
+@include('alerts.error')
 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
     @include('layouts.sidebar')
 
