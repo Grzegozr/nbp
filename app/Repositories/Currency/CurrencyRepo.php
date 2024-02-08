@@ -11,4 +11,12 @@ class CurrencyRepo extends CrudRepo implements ICurrencyRepo
     {
         parent::__construct($model);
     }
+
+    public function updateOrCreate(string $code, array $attributes)
+    {
+        $this->model->updateOrCreate(
+            ['code' => $code],
+            $attributes
+        );
+    }
 }

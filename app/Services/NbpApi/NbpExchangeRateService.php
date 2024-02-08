@@ -18,8 +18,7 @@ class NbpExchangeRateService implements IExchangeRateService
                     'Accept' => 'application/json',
                 ],
             ]);
-
-        return collect(json_decode($request->getBody()->getContents(), true)[0]['rates'] ?? []);
+        return collect(json_decode($request->getBody()->getContents())[0]->rates ?? []);
     }
 
     public function getExchangeRate($code): Collection
@@ -31,7 +30,6 @@ class NbpExchangeRateService implements IExchangeRateService
                     'Accept' => 'application/json',
                 ],
             ]);
-
-        return collect(json_decode($request->getBody()->getContents(), true)['rates'][0] ?? []);
+        return collect(json_decode($request->getBody()->getContents())->rates[0] ?? []);
     }
 }

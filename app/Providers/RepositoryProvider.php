@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repositories\Crud\CrudRepo;
 use App\Repositories\Crud\ICrudRepo;
+use App\Repositories\Currency\CurrencyRepo;
+use App\Repositories\Currency\ICurrencyRepo;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryProvider extends ServiceProvider
@@ -16,6 +18,7 @@ class RepositoryProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(ICrudRepo::class, CrudRepo::class);
+        $this->app->bind(ICurrencyRepo::class, CurrencyRepo::class);
     }
 
     /**
