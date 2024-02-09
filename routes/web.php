@@ -13,3 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [\App\Http\Controllers\NbpController::class, 'index'])->name('home');
+Route::resource('favorite_currencies', \App\Http\Controllers\FavoriteCurrencyController::class)->only([
+    'store', 'destroy'
+]);
