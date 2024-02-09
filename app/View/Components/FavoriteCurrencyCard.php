@@ -12,7 +12,7 @@ class FavoriteCurrencyCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $code, public $rate, public $name)
+    public function __construct(public $code, public $rate, public $name, public $id, public $table)
     {
         $this->letter = strtoupper(substr($code, 0, 1));
     }

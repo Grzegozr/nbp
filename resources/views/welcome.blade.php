@@ -11,6 +11,8 @@
                         :code="$favoriteCurrency->currency->code"
                         :name="$favoriteCurrency->currency->name"
                         :rate="$favoriteCurrency->rate"
+                        :id="$favoriteCurrency->id"
+                        table="favorite_currencies"
                     />
                 @endforeach
 
@@ -59,4 +61,10 @@
         </div>
     </div>
 
+        @include('components.delete-modal')
+
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/delete_modal.js') }}"></script>
 @endsection
