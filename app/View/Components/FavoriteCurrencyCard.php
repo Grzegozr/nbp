@@ -14,6 +14,8 @@ class FavoriteCurrencyCard extends Component
      */
     public function __construct(public $code, public $rate, public $name, public $id, public $table)
     {
+        $this->rate = rtrim($this->rate, '0');
+        $this->rate = rtrim($this->rate, '.');
         $this->letter = strtoupper(substr($code, 0, 1));
     }
 
